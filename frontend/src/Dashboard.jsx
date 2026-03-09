@@ -30,7 +30,7 @@ export default function SmartourDashboard() {
 
   return (
     <div className="p-6 bg-slate-900 text-white min-h-screen">
-      <h1 className="text-3xl font-bold text-cyan-400 mb-6">Smartour Business Portal Final</h1>
+      <h1 className="text-3xl font-bold text-cyan-400 mb-6">Smartour Business Portal Finalv2</h1>
       
       <div className="grid grid-cols-2 gap-6">
         {/* US1: AI Prediction Dashboard */}
