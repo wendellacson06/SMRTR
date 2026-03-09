@@ -1,0 +1,39 @@
+name: Smartour Production Deployment Simulation
+
+# This action runs automatically every time code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Simulate Running Automated Tests
+        run: |
+          echo "Running Phase 3: Construction - Automated Tests..."
+          echo "✅ Unit Test: Capacity cap halts at limit."
+          echo "✅ UI Test: Pause deal button triggers instantly."
+          sleep 10 # Fake a 10-second test duration
+          echo "All tests passed successfully!"
+
+  deploy-to-production:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    # THIS IS THE MAGIC WORD for Jira! 
+    # Jira sees "environment: production" and flags it on your tickets.
+    environment: production 
+    
+    steps:
+      - name: Simulate Canary Deployment
+        run: |
+          echo "Running Phase 4: Transition - Deployment..."
+          echo "Deploying to local business canary group..."
+          sleep 5
+          echo "Monitoring server load..."
+          sleep 5
+          echo "✅ Deployment Successful! Smartour is live."
